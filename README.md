@@ -74,9 +74,25 @@ grep’in flag’leri:
 
 ### Command’lerin çıktılarını nasıl saklıyoruz?
 
-`head -n 5 directory/dosya.csv > dosya2.csv`: çıktı dosya2.csv’ye gider.
+**örnek:** `head -n 5 directory/dosya.csv > dosya2.csv`: çıktı dosya2.csv’ye gider.
 
 çıkardığımız dosyanın içeriklerine `cat dosya2.csv`’yle bakabiliriz.
+
+**örnek:** `head -n 5 directory/dosya.csv >> dosya2.csv` : çıktı dosya2.csv'ye gider.
+
+fakat buradaki farklılık, `>` yerine `>>` kullanmamız. 
+eğer `>>` kullanırsak, yazdığımız veriler dosyaya eklenir, dosyada halihazırda bulunan veriler silinmez.
+
+yine aynı şekilde çıkardığımız dosyanın içeriklerine `cat dosya2.csv`’yle bakabiliriz.
+
+**örnek:** `head -n 5 directory/dosya.csv 2> dosya2.csv` : oluşan hata dosya2.csv'ye gider.
+
+buradaki farklılık ise `>` yerine `2>` kullanmamız. 
+eğer `2>` kullanırsak, kullandığımız komutta oluşan hata çıktılarını dosyaya yazmış oluruz. 
+
+**örnek:** `head -n 5 directory/dosya.csv > dosya2.csv 2> err.txt` 
+
+buradaki komutta hata oluşmazsa çıktı dosya2.csv'ye, hata oluşursa oluşan hata çıktısı err.txt'ye yazılır.
 
 ### pipe | operatörü:
 
@@ -116,5 +132,26 @@ Komutlarda birden fazla dosya ismi verirsek birden fazla dosya üstüne çalış
 `uniq`: çift yazılmış satırları siler
 
 `cut -d , -f 2 directory/dosya.csv | grep -v "anahtar_kelime" | sort | uniq -c`: ikinci kolonu al, içinde anahtar_kelime geçmeyen çıktıları al, hepsini sırala, her eşleşme bir kez çıkacak şekilde göster ve kaç kez gözüktüğü yazsın
+
+## dosya izinleri
+
+bazen kullandığımız dosyalar üzerinde yeterli iznimiz olmayabilir, veya önemli dosyaların başkaları tarafından okunup yazılmasını istemeyebiliriz. böyle durumlarda dosya izinlerini kullanabiliriz.
+
+`chmod` komutu ile yapılabilir
+
+`chmod` sekizlik(octal) sayı sistemi kullanır, bu sistemde `read` izni 4, `write` izni 2, `execute` izni ise 1 sayısı ile gösterilir.
+
+bir sistemde ise temel olarak 3 kullanıcı vardır, bunlar sırasıyla 
+- `owner` dosyanın sahibi
+- `group` bilgisayar üzerinde kayıtlı olan kullanıcılar
+- `other` geri kalan herkes
+
+**örnek:** `chmod 644 file.txt` :  bu komut sonrasında file.txt'yi dosyanın sahibi okuyabilir/yazabilir. bilgisayar üzerinde kayıtlı olan kullanıcılar ve geri kalan herkes bu dosyayı sadece okuyabilir. 
+
+buradaki 6 sayısı dosya sahibinin iznini, 4 sayısı bilgisayar üzerinde kayıtlı olan kullanıcıların iznini ve diğer 4 sayısı ise geri kalan herkesin iznini temsil eder.
+
+izinleri hesaplamak basittir. mesela dosya sahibine okuma ve yazma izni vermek için 4+2=6, okuma ve çalıştırma izni vermek için ise 4+1, yani 5 yazabiliriz. hiçbir izin vermek istemiyorsak 0 yazabiliriz. sıralama ise daima owner-group-other şeklindedir.
+
+
 
 > Written with [StackEdit](https://stackedit.io/).
