@@ -33,7 +33,7 @@ Bu repo shell komutlarının türkçe açıklamalarını içerir. Ekleme için p
 
 `mkdir directory_ismi`: Yeni boş directory açar
 
-`mkdir -p gecersiz_directory/hedef_directory`: Hedef directory ile birlikte ona giden tüm dizinleri de açar
+`mkdir -p gecersiz_directory/hedef_directory`: gecersiz_directory'nin varolmaması durumunda hedef_directory ile birlikte onu da açar.
 
 `rm -rf directory_ismi`: Directory'i siler
 
