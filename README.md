@@ -33,6 +33,8 @@ Bu repo shell komutlarının türkçe açıklamalarını içerir. Ekleme için p
 
 `mkdir directory_ismi`: Yeni boş directory açar
 
+`mkdir -p gecersiz_directory/hedef_directory`: Hedef directory ile birlikte ona giden tüm dizinleri de açar
+
 `rm -rf directory_ismi`: Directory'i siler
 
 `pbcopy`: sağına yazılanı clipboard'a kopyalar
@@ -60,6 +62,8 @@ Bu repo shell komutlarının türkçe açıklamalarını içerir. Ekleme için p
 `grep`: dosyada arama yapar
 
 `grep kelime directory/dosya.csv`: "kelime"yi içeren satırları getirir
+
+`grep -Hirn kelime directory`: belirtilen dizin altında "kelime"yi içeren satırları getirir
 
 grep’in flag’leri:
 
