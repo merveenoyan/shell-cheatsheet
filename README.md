@@ -5,13 +5,15 @@ Bu repo shell komutlarının türkçe açıklamalarını içerir. Ekleme için p
 
 ### Temel Komutlar
 
-`whoami`: Oturumun bulunduğu kullanıcı yazdırır.
+`whoami`: Bulunan oturumun sahibi kullanıcıyı yazdırır.
 
 `pwd`: Neredeyiz? Şu an bulunduğunuz dizini yazdırır. (“print working directory”) 
 
 `ls`: Bulunduğumuz dizinin içindeki dosyaları ve klasörleri listeler. (“listing”)
 
 `cd directory_adı`: Bulunduğunuz dizini değiştirmenize yarar. (“change directory”)
+
+`man`: Argüman olarak verdiğiniz komutun manuelini, kılavuzunu açar. (Örnek: man touch)
 
 `touch dosya_yolu`: Belirttiğiniz yoldaki dosyanın son değiştirilme tarihini günceller. Böyle bir dosya yoksa bu dosyayı oluşturur.
 
