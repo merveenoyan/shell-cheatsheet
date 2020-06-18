@@ -5,49 +5,49 @@ Bu repo shell komutlarının türkçe açıklamalarını içerir. Ekleme için p
 
 ### Temel Komutlar
 
-`pwd`: Neredeyiz? Şu an bulunduğumuz dizini döndürür. (“print working directory”) 
+`pwd`: Neredeyiz? Şu an bulunduğunuz dizini yazdırır. (“print working directory”) 
 
-`ls`: Bulunduğumuz dizinin içindeki dosyaları ve klasörleri listeler (“listing”)
+`ls`: Bulunduğumuz dizinin içindeki dosyaları ve klasörleri listeler. (“listing”)
 
-`cd directory_adı`: başka bir dizine gitmek (“change directory”)
+`cd directory_adı`: Bulunduğunuz dizini değiştirmenize yarar. (“change directory”)
 
-`touch dosya_adı`: Bulunduğumuz dizinde yeni dosya açar, uzantısını da belirtebiliriz
+`touch dosya_yolu`: Belirttiğiniz yoldaki dosyanın son değiştirilme tarihini günceller. Böyle bir dosya yoksa bu dosyayı oluşturur.
 
-`cd ..` : Şu anda olduğumuz dizinin bulunduğu klasöre gitmek için
+`cd ..` : Hıyerarşik olarak bulunduğunuz dizinden üst dizine çıkmanıza yarar. (Örnek: Çalışma dizininiz /home/ali iken çalışma dizininizi /home yapar)
 
-`~` : home directory
+`~` : Oturumun açık olduğu kullanıcı için home dizini kısayolu. (Tilde semmbolü)
 
-`cd ~/../.`: 'home,' 'bir üst klasör', 'burası'
+`cd ~/../.`: Çalışma dizininizi "home"'un üst dizinine ayarlar. Sondaki nokta işareti bulunduğu yeri belirtir.
 
-`cp klasör/dosya.csv backup/dosya.bck`: backup dizininde dosya.csv’nin kopyasını oluşturup ismini duplicate.txt yapar
+`cp klasör/dosya.csv backup/dosya.bck`: klasör dizinindeki "dosya.csv" dosyasını, abckup dizinine "dosya.bck" dosya ismiyle kopyalar.
 
-`cp dosya1.txt dosya2.txt backup`: iki tane dosyayı backup’ta kopyalar
+`cp dosya1.txt dosya2.txt backup`: Belirtilen iki dosyayı ("dosya1.txt" ve "dosya2.txt") aynı isimle backup dizinine kopyalar.
 
-`mv`: dosyaları taşımak için (move)
+`mv`: Dosyaları taşımak ya da yeniden adlandırmak için kullanılan komut (move)
 
-`mv dosya_adi.txt yeni_dosya_adi.txt`: mv aynı şekilde dosyaların ve dizinlerin ismini değiştirmek için de kullanılır
+`mv dosya_adi.txt yeni_dosya_adi.txt`: mv dosya_adi.txt'yi yeni_dosya_adi.txt olarak taşıdık. Böylece adını değiştirmiş olduk.
 
-`rm`: dosyaları silmek için (remove)
+`rm`: Dosyaları silmek için kullanılan komut. (remove)
 
-`rm dosya.txt backup/dosya-2.txt`: Dizinde ismi verilen iki dosyayı siler
+`rm dosya.txt backup/dosya-2.txt`: Beliritilen iki dosyayı da siler.
 
-`mkdir directory_ismi`: Yeni boş dizin açar
+`mkdir dizin_ismi`: dizin_ismi adında bir dizin açar.
 
-`mkdir -p gecersiz_directory/hedef_directory`: gecersiz_directory'nin varolmaması durumunda hedef_directory ile birlikte onu da açar.
+`mkdir -p gecersiz_dizin/hedef_dizin`: gecersiz_directory'nin varolmaması durumunda hedef_directory ile birlikte onu da açar.
 
-`rm -rf directory_ismi`: Dizini siler
+`rm -rf dizin_ismi`: dizin_ismi adlı dizini içindeki dosyaları ve altdizinleri de dahil ederek siler.
 
-`pbcopy`: sağına yazılanı clipboard'a kopyalar
+`pbcopy`: Argüman olarak verilen değeri panoya kopyalar.
 
-`cat dosya_ismi`: Dosyanın içeriğini görmeyi sağlar
+`cat dosya_ismi`: Dosyanın içeriğini ekrana yazdırır.
 
 `df`: Dosya sisteminizdeki disk alanı hakkında bilgi edinmenizi sağlar
 
 `ps`: Sisteminizde hangi işlemlerin çalıştığını görmenizi sağlar
 
-`wget`: Bir adresteki dosyayı terminal üzerinden doğruca kendi makinemize indirmek için kullanılır
+`wget`: HTTP, HTTPS veya FTP protokollerini kullanan bir adresteki dosyayı terminal üzerinden doğruca kendi makinemize indirmek için kullanılan komut.
 
-`grep`: Bu komut dosyaların içinde arama yapmamızı sağlar. Log incelerken oldukça işe yarar 
+`grep`: Dosyaların içinde düzenli ifadelerle arama yapmanızı sağlayan komut. Log incelerken vazgeçilmezimiz.
 
 ## Data Manipulation
 
