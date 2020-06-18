@@ -5,6 +5,8 @@ Bu repo shell komutlarının türkçe açıklamalarını içerir. Ekleme için p
 
 ### Temel Komutlar
 
+`whoami`: Oturumun bulunduğu kullanıcı yazdırır.
+
 `pwd`: Neredeyiz? Şu an bulunduğunuz dizini yazdırır. (“print working directory”) 
 
 `ls`: Bulunduğumuz dizinin içindeki dosyaları ve klasörleri listeler. (“listing”)
