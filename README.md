@@ -5,39 +5,39 @@ Bu repo shell komutlarının türkçe açıklamalarını içerir. Ekleme için p
 
 ### Temel Komutlar
 
-`whoami`: Bulunan oturumun sahibi kullanıcıyı yazdırır.
+`whoami`: Bulunan oturumun sahibi olan kullanıcıyı yazdırır.
 
 `pwd`: Neredeyiz? Şu an bulunduğunuz dizini yazdırır. (“print working directory”) 
 
-`ls`: Bulunduğumuz dizinin içindeki dosyaları ve klasörleri listeler. (“listing”)
+`ls`: Bulunduğumuz dizinin içindeki dosyaları ve dizinleri listeler. (“listing”)
 
-`cd directory_adı`: Bulunduğunuz dizini değiştirmenize yarar. (“change directory”)
+`cd dizin_adı`: Bulunduğunuz dizini değiştirmenize yarar. (“change directory”)
 
 `man`: Argüman olarak verdiğiniz komutun manuelini, kılavuzunu açar. (Örnek: man touch)
 
 `touch dosya_yolu`: Belirttiğiniz yoldaki dosyanın son değiştirilme tarihini günceller. Böyle bir dosya yoksa bu dosyayı oluşturur.
 
-`cd ..` : Hıyerarşik olarak bulunduğunuz dizinden üst dizine çıkmanıza yarar. (Örnek: Çalışma dizininiz /home/ali iken çalışma dizininizi /home yapar)
+`cd ..` : Hiyerarşik olarak bulunduğunuz dizinden üst dizine çıkmanıza yarar. (Örnek: Çalışma dizininiz /home/ali iken çalışma dizininizi /home yapar)
 
-`~` : Oturumun açık olduğu kullanıcı için home dizini kısayolu. (Tilde semmbolü)
+`~` : Oturumun sahibi kullanıcı için home dizinini belirtir. (Tilde sembolü)
 
-`cd ~/../.`: Çalışma dizininizi "home"'un üst dizinine ayarlar. Sondaki nokta işareti bulunduğu yeri belirtir.
+`cd ~/../.`: Çalışma dizininizi "home"'un üst dizinine ayarlar. Sondaki nokta bulunulan en son klasörün kendisini belirtir.
 
-`cp klasör/dosya.csv backup/dosya.bck`: klasör dizinindeki "dosya.csv" dosyasını, abckup dizinine "dosya.bck" dosya ismiyle kopyalar.
+`cp klasör/dosya.csv backup/dosya.bck`: "klasör" dizinindeki "dosya.csv" dosyasını, "backup" dizinine "dosya.bck" dosya ismiyle kopyalar.
 
-`cp dosya1.txt dosya2.txt backup`: Belirtilen iki dosyayı ("dosya1.txt" ve "dosya2.txt") aynı isimle backup dizinine kopyalar.
+`cp dosya1.txt dosya2.txt backup`: Belirtilen iki dosyayı ("dosya1.txt" ve "dosya2.txt") aynı isimle "backup" dizinine kopyalar.
 
 `mv`: Dosyaları taşımak ya da yeniden adlandırmak için kullanılan komut (move)
 
-`mv dosya_adi.txt yeni_dosya_adi.txt`: mv dosya_adi.txt'yi yeni_dosya_adi.txt olarak taşıdık. Böylece adını değiştirmiş olduk.
+`mv dosya_adi.txt yeni_dosya_adi.txt`: dosya_adi.txt'yi yeni_dosya_adi.txt olarak taşıdık. Böylece adını değiştirmiş olduk.
 
-`rm`: Dosyaları silmek için kullanılan komut. (remove)
+`rm`: Dosyaları silmek için kullanılan komut. ("remove")
 
-`rm dosya.txt backup/dosya-2.txt`: Beliritilen iki dosyayı da siler.
+`rm dosya.txt backup/dosya-2.txt`: Belirtilen iki dosyayı da siler.
 
-`mkdir dizin_ismi`: dizin_ismi adında bir dizin açar.
+`mkdir dizin_ismi`: dizin_ismi adında yeni bir dizin oluşturur.
 
-`mkdir -p gecersiz_dizin/hedef_dizin`: gecersiz_directory'nin varolmaması durumunda hedef_directory ile birlikte onu da açar.
+`mkdir -p gecersiz_dizin/hedef_dizin`: gecersiz_dizin'in varolmaması durumunda hedef_dizin ile birlikte onu da açar.
 
 `rm -rf dizin_ismi`: dizin_ismi adlı dizini içindeki dosyaları ve altdizinleri de dahil ederek siler.
 
@@ -45,15 +45,15 @@ Bu repo shell komutlarının türkçe açıklamalarını içerir. Ekleme için p
 
 `cat dosya_ismi`: Dosyanın içeriğini ekrana yazdırır.
 
-`df`: Dosya sisteminizdeki disk alanı hakkında bilgi edinmenizi sağlar
+`df`: Dosya sisteminizdeki disk alanı hakkında bilgi edinmenizi sağlar.
 
-`ps`: Sisteminizde hangi işlemlerin çalıştığını görmenizi sağlar
+`ps`: Sisteminizde hangi işlemlerin çalıştığını görmenizi sağlar.
 
 `wget`: HTTP, HTTPS veya FTP protokollerini kullanan bir adresteki dosyayı terminal üzerinden doğruca kendi makinemize indirmek için kullanılan komut.
 
-`grep`: Dosyaların içinde düzenli ifadelerle arama yapmanızı sağlayan komut. Log incelerken vazgeçilmezimiz.
+`grep`: Dosyaların içinde düzenli ifadelerle (RegEx) arama yapmanızı sağlayan komut. Log incelerken vazgeçilmezimiz.
 
-## Data Manipulation
+## Veri Manipülasyonu
 
 `less`: Büyük dosyalara bakmak için kullanılan bir komut. Dosyanın tamamını ekrana yazdırmaz, daha okunabilir ilerlenebilir hale getirir.
 
@@ -61,7 +61,7 @@ Bu repo shell komutlarının türkçe açıklamalarını içerir. Ekleme için p
 
 `head`: Dosyanın ilk parçasını (standart 10 satır) yazdırır.
 
-### command line flags:
+### Komut Satırı Bayrakları:
 
 `head -n 3 directory/dosya_ismi.csv`: Dosyadaki ilk üç satırı getiriyor (“number of lines”)
 
@@ -124,7 +124,7 @@ pipe soldaki komutun çıktısını alıp sağa gönderiyor.
 
 `wc`: kaç tane karakter, kelime, ya da satır varsa döndürür (“word count”)
 
-## Wildcards
+## Jokerler
 
 Komutlarda birden fazla dosya ismi verirsek birden fazla dosya üstüne çalışır. Bütün dosyaların hepsini tek tek yazmaktansa * operatörünü kullanırız 
 
@@ -138,7 +138,7 @@ Komutlarda birden fazla dosya ismi verirsek birden fazla dosya üstüne çalış
 
 `{…}`: `{*.txt, *.csv}` .txt ya da .csv’yle biten dosyaları eşler.
 
-## sıralama yapmak
+## Sıralama Yapmak
 `sort` komutuyla yapılabilir.
 `-n` flag’i: numerik olarak sıralar
 `-r`: tersten sıralar
@@ -151,7 +151,7 @@ Komutlarda birden fazla dosya ismi verirsek birden fazla dosya üstüne çalış
 
 `cut -d , -f 2 directory/dosya.csv | grep -v "anahtar_kelime" | sort | uniq -c`: ikinci kolonu al, içinde anahtar_kelime geçmeyen çıktıları al, hepsini sırala, her eşleşme bir kez çıkacak şekilde göster ve kaç kez gözüktüğü yazsın
 
-## dosya izinleri
+## Dosya İzinleri
 
 bazen kullandığımız dosyalar üzerinde yeterli iznimiz olmayabilir, veya önemli dosyaların başkaları tarafından okunup yazılmasını istemeyebiliriz. böyle durumlarda dosya izinlerini kullanabiliriz.
 
@@ -169,7 +169,3 @@ bir sistemde ise temel olarak 3 kullanıcı vardır, bunlar sırasıyla
 buradaki 6 sayısı dosya sahibinin iznini, 4 sayısı bilgisayar üzerinde kayıtlı olan kullanıcıların iznini ve diğer 4 sayısı ise geri kalan herkesin iznini temsil eder.
 
 izinleri hesaplamak basittir. mesela dosya sahibine okuma ve yazma izni vermek için 4+2=6, okuma ve çalıştırma izni vermek için ise 4+1, yani 5 yazabiliriz. hiçbir izin vermek istemiyorsak 0 yazabiliriz. sıralama ise daima owner-group-other şeklindedir.
-
-
-
-> Written with [StackEdit](https://stackedit.io/).
