@@ -51,11 +51,11 @@ Bu repo shell komutlarının türkçe açıklamalarını içerir. Ekleme için p
 
 ## Data Manipulation
 
-`less`: daha büyük dosyalara bakmak için kullanılır
+`less`: Büyük dosyalara bakmak için kullanılan bir komut. Dosyanın tamamını ekrana yazdırmaz, daha okunabilir ilerlenebilir hale getirir.
 
 `less`’e birden fazla dosya ismi verirsek `:n`’le bir sonraki dosyaya, `:p`’yla bir önceki dosyaya gideriz, `:q`’la çıkarız.
 
-`head`: dosyanın başına bakmak için
+`head`: Dosyanın ilk parçasını (standart 10 satır) yazdırır.
 
 ### command line flags:
 
