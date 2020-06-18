@@ -39,6 +39,16 @@ Bu repo shell komutlarının türkçe açıklamalarını içerir. Ekleme için p
 
 `pbcopy`: sağına yazılanı clipboard'a kopyalar
 
+`cat dosya_ismi`: Dosyanın içeriğini görmeyi sağlar
+
+`df`: Dosya sisteminizdeki disk alanı hakkında bilgi edinmenizi sağlar
+
+`ps`: Sisteminizde hangi işlemlerin çalıştığını görmenizi sağlar
+
+`wget`: Bir adresteki dosyayı terminal üzerinden doğruca kendi makinemize indirmek için kullanılır
+
+`grep`: Bu komut dosyaların içinde arama yapmamızı sağlar. Log incelerken oldukça işe yarar 
+
 ## Data Manipulation
 
 `less`: daha büyük dosyalara bakmak için kullanılır
