@@ -90,7 +90,7 @@
 
 `paste`: İki tabloyu tek tablo yapar.
 
-### Komutların Çıktılarını nasıl Saklarız?
+# Komutların Çıktılarını Nasıl Saklarız?
 
 >**Örnek:** `head -n 5 directory/dosya.csv > dosya2.csv`: çıktı dosya2.csv’ye gider.
 
