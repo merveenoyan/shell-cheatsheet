@@ -5,37 +5,37 @@ Bu repo shell komutlarının türkçe açıklamalarını içerir. Ekleme için p
 
 ### Temel Komutlar
 
-`pwd`: Neredeyiz? Şu an bulunduğumuz directory’i döndürür. (“print working directory”) 
+`pwd`: Neredeyiz? Şu an bulunduğumuz dizini döndürür. (“print working directory”) 
 
-`ls`: Bulunduğumuz directory’nin içindeki dosyaları ve klasörleri listeler (“listing”)
+`ls`: Bulunduğumuz dizinin içindeki dosyaları ve klasörleri listeler (“listing”)
 
-`cd directory_adı`: başka bir directory’e gitmek (“change directory”)
+`cd directory_adı`: başka bir dizine gitmek (“change directory”)
 
-`touch dosya_adı`: Bulunduğumuz directory'de yeni dosya açar, uzantısını da belirtebiliriz
+`touch dosya_adı`: Bulunduğumuz dizinde yeni dosya açar, uzantısını da belirtebiliriz
 
-`cd ..` : Şu anda olduğumuz directory’nin bulunduğu klasöre gitmek için
+`cd ..` : Şu anda olduğumuz dizinin bulunduğu klasöre gitmek için
 
 `~` : home directory
 
 `cd ~/../.`: 'home,' 'bir üst klasör', 'burası'
 
-`cp klasör/dosya.csv backup/dosya.bck`: backup directory’sinde dosya.csv’nin kopyasını oluşturup ismini duplicate.txt yapar
+`cp klasör/dosya.csv backup/dosya.bck`: backup dizininde dosya.csv’nin kopyasını oluşturup ismini duplicate.txt yapar
 
 `cp dosya1.txt dosya2.txt backup`: iki tane dosyayı backup’ta kopyalar
 
 `mv`: dosyaları taşımak için (move)
 
-`mv dosya_adi.txt yeni_dosya_adi.txt`: mv aynı şekilde dosyaların ve directory’lerin ismini değiştirmek için de kullanılır
+`mv dosya_adi.txt yeni_dosya_adi.txt`: mv aynı şekilde dosyaların ve dizinlerin ismini değiştirmek için de kullanılır
 
 `rm`: dosyaları silmek için (remove)
 
-`rm dosya.txt backup/dosya-2.txt`: Directory’de ismi verilen iki dosyayı siler
+`rm dosya.txt backup/dosya-2.txt`: Dizinde ismi verilen iki dosyayı siler
 
-`mkdir directory_ismi`: Yeni boş directory açar
+`mkdir directory_ismi`: Yeni boş dizin açar
 
 `mkdir -p gecersiz_directory/hedef_directory`: gecersiz_directory'nin varolmaması durumunda hedef_directory ile birlikte onu da açar.
 
-`rm -rf directory_ismi`: Directory'i siler
+`rm -rf directory_ismi`: Dizini siler
 
 `pbcopy`: sağına yazılanı clipboard'a kopyalar
 
@@ -63,11 +63,11 @@ Bu repo shell komutlarının türkçe açıklamalarını içerir. Ekleme için p
 
 `ls -R`: Bütün klasörleri ve içindekileri gösterir
 
-`man`: Yanına yazılan command hakkında yardım eder (manual)
+`man`: Yanına yazılan komut hakkında yardım eder (manual)
 
-`cut`: csv dosyalarında kolonları seçer
+`cut`: csv dosyalarında sütunları seçer
 
-`cut -f 2-5,8 -d , dosya.csv`: 2. ve 5. kolon arasındakileri seç. (flag'ler: -f (fields, kolonları belirtir), -d (delimiter, ayırıcı))
+`cut -f 2-5,8 -d , dosya.csv`: 2. ve 5. sütun arasındakileri seç. (flag'ler: -f (fields, sütunları belirtir), -d (delimiter, ayırıcı))
 
 `grep`: dosyada arama yapar
 
@@ -86,7 +86,7 @@ grep’in flag’leri:
 
 `paste`: iki tabloyu tek tablo yapar
 
-### Command’lerin çıktılarını nasıl saklıyoruz?
+### Komutların çıktılarını nasıl saklıyoruz?
 
 **örnek:** `head -n 5 directory/dosya.csv > dosya2.csv`: çıktı dosya2.csv’ye gider.
 
