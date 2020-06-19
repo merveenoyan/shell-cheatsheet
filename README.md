@@ -7,6 +7,8 @@ Bu repo shell komutlarının türkçe açıklamalarını içerir. Ekleme için p
 
 `whoami`: Bulunan oturumun sahibi olan kullanıcıyı yazdırır.
 
+`su`: Başka bir kullanıcının yetkileri ile komut çalıştırmak için yeni bir shell ayağa kaldırır. (“Örnek: su root”) 
+
 `pwd`: Neredeyiz? Şu an bulunduğunuz dizini yazdırır. (“print working directory”) 
 
 `ls`: Bulunduğumuz dizinin içindeki dosyaları ve dizinleri listeler. (“listing”)
@@ -26,6 +28,8 @@ Bu repo shell komutlarının türkçe açıklamalarını içerir. Ekleme için p
 `cp klasör/dosya.csv backup/dosya.bck`: "klasör" dizinindeki "dosya.csv" dosyasını, "backup" dizinine "dosya.bck" dosya ismiyle kopyalar.
 
 `cp dosya1.txt dosya2.txt backup`: Belirtilen iki dosyayı ("dosya1.txt" ve "dosya2.txt") aynı isimle "backup" dizinine kopyalar.
+
+`dd`: Dosya kopyalama ve dönüştürme yapar.Örneğin `dd if=/dev/sda of=./disk.img` ile /dev/sda diskinin tamamının imajını .img dosyası olarak alabilirsiniz.
 
 `mv`: Dosyaları taşımak ya da yeniden adlandırmak için kullanılan komut (move)
 
@@ -49,6 +53,8 @@ Bu repo shell komutlarının türkçe açıklamalarını içerir. Ekleme için p
 
 `ps`: Sisteminizde hangi işlemlerin çalıştığını görmenizi sağlar.
 
+`groups`: Verilen kullanıcının gruplarını listeler. Örneğin `groups root`
+
 `wget`: HTTP, HTTPS veya FTP protokollerini kullanan bir adresteki dosyayı terminal üzerinden doğruca kendi makinemize indirmek için kullanılan komut.
 
 `grep`: Dosyaların içinde düzenli ifadelerle (RegEx) arama yapmanızı sağlayan komut. Log incelerken vazgeçilmezimiz.
@@ -58,6 +64,8 @@ Bu repo shell komutlarının türkçe açıklamalarını içerir. Ekleme için p
 `less`: Büyük dosyalara bakmak için kullanılan bir komut. Dosyanın tamamını ekrana yazdırmaz, daha okunabilir ilerlenebilir hale getirir.
 
 `less`’e birden fazla dosya ismi verirsek `:n`’le bir sonraki dosyaya, `:p`’yla bir önceki dosyaya gideriz, `:q`’la çıkarız.
+
+`more`: `less`' in eskisi. Sadece aşağıya kaydırmaya izin verir.
 
 `head`: Dosyanın ilk parçasını (standart 10 satır) yazdırır.
 
@@ -72,6 +80,10 @@ Bu repo shell komutlarının türkçe açıklamalarını içerir. Ekleme için p
 `cut`: csv dosyalarında sütunları seçer
 
 `cut -f 2-5,8 -d , dosya.csv`: 2. ve 5. sütun arasındakileri seç. (flag'ler: -f (fields, sütunları belirtir), -d (delimiter, ayırıcı))
+
+`sed`: Akış editörü. Dosyalar üzerinde bir çok işlem yapmaya yarar. Örneğin `sed -i 's/aaaa/bbbb/g' test.txt` ile text.txt içerisinde ki her aaaa dizisi bbbb haline getirilebilir.
+
+`find`: Dizin araması yapar. `find / -name "temp*"` ile / dizininde ismi temp ile başlayan tüm dosyalar aranabilir.
 
 `grep`: dosyada arama yapar
 
@@ -169,3 +181,37 @@ bir sistemde ise temel olarak 3 kullanıcı vardır, bunlar sırasıyla
 buradaki 6 sayısı dosya sahibinin iznini, 4 sayısı bilgisayar üzerinde kayıtlı olan kullanıcıların iznini ve diğer 4 sayısı ise geri kalan herkesin iznini temsil eder.
 
 izinleri hesaplamak basittir. mesela dosya sahibine okuma ve yazma izni vermek için 4+2=6, okuma ve çalıştırma izni vermek için ise 4+1, yani 5 yazabiliriz. hiçbir izin vermek istemiyorsak 0 yazabiliriz. sıralama ise daima owner-group-other şeklindedir.
+
+## Sistem Bilgisi
+
+`who`: Oturum açmış kullanıcıları listeler.
+
+`lsusb`: USB aygıtları listeler. USB ile takılan aygıtın tanınıp tanınmadığını anlamaya yarıyor.
+
+`dmesg`: Sistem yeni bir donanım tespit ettiğini ya da bir donanımın bağlantısının kesildiğini farkettiğinde oluşturduğu mesajları görmemizi sağlar. Bu sayede bir donanımın bağlı olup olmadığını anlayabiliriz.
+
+`lsblk`: Sistemde ki diskleri ve partitionları gösterir.
+
+`lsb_release -a`: Mevcut GNU/Linux dağıtımı hakkında bilgi verir.(Debian tabanlılarda test ettim).
+
+`uname -a`: Sistem ve çekirdek hakkında bilgi verir.
+
+`free`: RAM kullanımı ve durumu ile ilgili bilgi verir.
+
+`du ./`: Verilen dizin içinde bulunan dosyaları ve boyutlarını listeliyor.
+
+`tree ./`: Verilen dizini ağaç yapısı şeklinde listeler. İşe yarar.
+
+`history`: Kullanıcının komut geçmişini ortaya döker. Bu kayıtlar genelde home dizini altında eğer kullanılan shell bash ise home dizini altında .bash_history dosyasında tutulur.
+
+`top`: Terminal içinde görev yöneticisi. Kardeşi `htop` daha renkli ve daha fazla özelliğe sahip ama indirmek gerekiyor.
+
+`kill`: Processlere sinyal göndermeye yarar. Mesela kilitlenen bir işlem varsa örneğin Firefox, PID numarası tespit edildikten sonra `kill -9 PID_Numarası` yazılarak Firefox'a SIGKILL gönderilebilir. Bu da Firefox'u kapatacaktır.
+
+## Ağ
+
+`ifconfig`: Ağ arayüzleri hakkında bilgi verir. Sistemde ki ağ kartlarının MAC ve IP adreslerini bulmakta yardımcı oluyor.
+
+`ping`: Parametre olarak girilen adrese ICMP paketleri atar. Windows' dan farklı olarak GNU/Linux sürümünde eğer müdahale edilmez ise sonsuza kadar ping atmaya devam eder. Windows' da yanılmıyorsam 3 tane atıp kendini durduruyor.
+
+`netstat -antup`: Kullanımda olan portları listeler. LISTEN olanlara dikkat edilmesi iyi olur.
