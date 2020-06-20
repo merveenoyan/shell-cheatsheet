@@ -1,4 +1,4 @@
-﻿
+﻿﻿
 ![Shell Cheatsheet](https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/05df8cc2-4413-4a7c-93c7-dbf7991b18a7/ddzkgj0-fe2edca4-57ab-4dce-8899-ce94182a9160.png/v1/fill/w_1280,h_449,q_80,strp/shell_cheatsheet_by_markdownimgmn_ddzkgj0-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD00NDkiLCJwYXRoIjoiXC9mXC8wNWRmOGNjMi00NDEzLTRhN2MtOTNjNy1kYmY3OTkxYjE4YTdcL2RkemtnajAtZmUyZWRjYTQtNTdhYi00ZGNlLTg4OTktY2U5NDE4MmE5MTYwLnBuZyIsIndpZHRoIjoiPD0xMjgwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.VYVfzUImBjcz2_b-_RRdfmOOdZju6u8gKFE-BOtQaD4)
 
 Bu repo shell komutlarının türkçe açıklamalarını içerir. Ekleme için pull request'lere tamamiyle açıktır.
@@ -51,6 +51,8 @@ Bu repo shell komutlarının türkçe açıklamalarını içerir. Ekleme için p
 
 `df`: Dosya sisteminizdeki disk alanı hakkında bilgi edinmenizi sağlar.
 
+`du`: Disk kullanımını görmek ve hangi uygulamanın yada dosya alt sisteminin ne kadar yer kapladığını görmek için kullanılır.
+
 `ps`: Sisteminizde hangi işlemlerin çalıştığını görmenizi sağlar.
 
 `groups`: Verilen kullanıcının gruplarını listeler. Örneğin `groups root`
@@ -58,6 +60,8 @@ Bu repo shell komutlarının türkçe açıklamalarını içerir. Ekleme için p
 `wget`: HTTP, HTTPS veya FTP protokollerini kullanan bir adresteki dosyayı terminal üzerinden doğruca kendi makinemize indirmek için kullanılan komut.
 
 `grep`: Dosyaların içinde düzenli ifadelerle (RegEx) arama yapmanızı sağlayan komut. Log incelerken vazgeçilmezimiz.
+
+`watch`: Belirli aralıklarla bir komutun çıktısını çalıştırarak ekrana yazdırır.(watch -n1 ls -la )
 
 ## Veri Manipülasyonu
 
@@ -69,6 +73,8 @@ Bu repo shell komutlarının türkçe açıklamalarını içerir. Ekleme için p
 
 `head`: Dosyanın ilk parçasını (standart 10 satır) yazdırır.
 
+`tail`:  Head  komutunun tam tersi  olarak dosyanın son parçasını yazdırır. '-f' parametresi ile kullanıldığı zaman dosyaya anlık olarak yazılan içeriği ekrana basar.
+ 
 ### Komut Satırı Bayrakları:
 
 `head -n 3 directory/dosya_ismi.csv`: Dosyadaki ilk üç satırı getiriyor (“number of lines”)
@@ -82,6 +88,8 @@ Bu repo shell komutlarının türkçe açıklamalarını içerir. Ekleme için p
 `cut -f 2-5,8 -d , dosya.csv`: 2. ve 5. sütun arasındakileri seç. (flag'ler: -f (fields, sütunları belirtir), -d (delimiter, ayırıcı))
 
 `sed`: Akış editörü. Dosyalar üzerinde bir çok işlem yapmaya yarar. Örneğin `sed -i 's/aaaa/bbbb/g' test.txt` ile text.txt içerisinde ki her aaaa dizisi bbbb haline getirilebilir.
+
+`awk`: Metin dosyalarını işlemek için kullanılır. Örneğin `awk  -F';' '{print$1}' test.txt` ile test.txt içerisindeki  satırları ';' ayracına göre sütunlara ayırır ve ilk sütunları ekrana yazdırır  
 
 `find`: Dizin araması yapar. `find / -name "temp*"` ile / dizininde ismi temp ile başlayan tüm dosyalar aranabilir.
 
@@ -210,8 +218,16 @@ izinleri hesaplamak basittir. mesela dosya sahibine okuma ve yazma izni vermek i
 
 ## Ağ
 
+`ip a` :  Sistemde varolan tüm interface bilgilerini numaralandırarak ekrana basar.
+
 `ifconfig`: Ağ arayüzleri hakkında bilgi verir. Sistemde ki ağ kartlarının MAC ve IP adreslerini bulmakta yardımcı oluyor.
 
 `ping`: Parametre olarak girilen adrese ICMP paketleri atar. Windows' dan farklı olarak GNU/Linux sürümünde eğer müdahale edilmez ise sonsuza kadar ping atmaya devam eder. Windows' da yanılmıyorsam 3 tane atıp kendini durduruyor.
 
 `netstat -antup`: Kullanımda olan portları listeler. LISTEN olanlara dikkat edilmesi iyi olur.
+
+`route`: Sistemdeki yönlendirme tablosunu listeleme ve yönetme işlemlerini yapar. Host üzerinde tanımlı olan  bir arayüz üzerinden belirtilmiş hedeflere static yönlendirme yapar.
+
+`tcpdump`: Sisteme gelen network trafigini incelemeye yarar. 
+
+**örnek:** `tcpdump -i eth0` : Belirtilen arayüzün dinlenmesini sağlar. Gelen network paketlerini ekrana yazdırır.
