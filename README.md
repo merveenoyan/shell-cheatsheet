@@ -231,3 +231,5 @@ izinleri hesaplamak basittir. mesela dosya sahibine okuma ve yazma izni vermek i
 `tcpdump`: Sisteme gelen network trafigini incelemeye yarar. 
 
 **örnek:** `tcpdump -i eth0` : Belirtilen arayüzün dinlenmesini sağlar. Gelen network paketlerini ekrana yazdırır.
+
+`traceroute github.com`: İnternet sitesine ulaşırken aradaki veri akışını izlemek için kullanılan basit bir komuttur. Bu komut genellikle web sitesinin yayın alıp almadığını kontrol etmek amaçlı yapılan bir işlemdir. Sunucu tarafında bir IP bazlı engelleme yaşandı ise bu tracert komutu ile kontrol edilerek tespit edilebilmektedir.. 
