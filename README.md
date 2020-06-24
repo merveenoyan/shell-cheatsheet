@@ -169,3 +169,115 @@ bir sistemde ise temel olarak 3 kullanıcı vardır, bunlar sırasıyla
 buradaki 6 sayısı dosya sahibinin iznini, 4 sayısı bilgisayar üzerinde kayıtlı olan kullanıcıların iznini ve diğer 4 sayısı ise geri kalan herkesin iznini temsil eder.
 
 izinleri hesaplamak basittir. mesela dosya sahibine okuma ve yazma izni vermek için 4+2=6, okuma ve çalıştırma izni vermek için ise 4+1, yani 5 yazabiliriz. hiçbir izin vermek istemiyorsak 0 yazabiliriz. sıralama ise daima owner-group-other şeklindedir.
+
+# Bash Söz Dizimi
+## Değişkenler
+
+degisken=1 veya degisken="yazı" şeklinde değişken tanımlaması yapılır, boşlukla değişken tanımlanması halinde hata alırsınız.
+
+DEGISKEN=1 veya DEGISKEN="yazı" bu şekilde global değişken tanımlayabilirsiniz. Kodlarınızın herhangi bir yerine;
+```bash
+export DEGISKEN
+```
+yazdıktan sonra birbirini tetikleyen scriptler yazmanız halinde dosyalar arası değişkenlerinizi kullanabilirsiniz.
+
+## Değişkenleri Yazdırmak
+```bash
+ad="Ömer"
+echo $ad
+
+> Ömer
+```
+```bash
+echo ad
+> ad
+echo '$ad'
+> $ad
+```
+### Cümle İçinde Yazdırmak
+```bash
+echo "Selam Benim Adım, $ad"
+```
+## Bilinmesi Gereken Bazı Değişkenler
+- $#: Komut dosyasına kaç komut satırı parametresi geçirildi.
+- $@: Komut satırı parametrelerine iletilen tüm komut satırı parametreleri.
+- $?: Çalıştırılacak son işlemin çıkış durumu.
+- $$: Geçerli komut dosyasının İşlem Kimliği (PID).
+- $USER: Betiği çalıştıran kullanıcının kullanıcı adı.
+- $HOSTNAME: Komut dosyasını çalıştıran bilgisayarın ana bilgisayar adı.
+- $SECONDS: Betiğin çalıştığı saniye sayısı.
+- $RANDOM: Rastgele bir sayı döndürür.
+- $LINENO: Komut dosyasının geçerli satır numarasını döndürür.
+- $PATH: PATH değişkeninde bir komut yazıldığı anda sistem tarafından aranacak olan patika listesi görüntülenir.
+
+## Aritmetik İşlemler
+```bash
+let "a=2+3" # +(toplama), -(çıkarma), *(çarpma), /(bölme)
+echo $a
+> 5
+```
+##
+
+## Aritmetik Kıyaslamalar
+- -gt büyük 
+- -lt küçük
+- -ge büyük eşit
+- -le küçük eşit 
+- -eq eşit 
+- -ne eşit değil
+
+```bash
+sayi=2
+[ $sayi -eq 3 ]
+echo $?
+> 0
+[ $sayi -lt 2 ]
+echo $?
+>1
+```
+
+## If Kullanımı
+```bash
+#!/bin/bash
+sayi=3
+
+if [ $sayi -eq 3]; then  
+# == da kullanabilirsiniz.
+  echo Sayı eşit
+else
+  echo Sayı eşit değil
+fi
+
+> Sayı eşit
+```
+
+## While Kullanımı
+
+```bash
+#!/bin/bash
+sayi=2
+while [ $sayi -lt 100 ]
+   do
+        deger=$((deger+2))
+        echo $sayi
+   done
+```
+Yukarıda görmüş olduğunuz $() kullanımı terminalde dönen çıktı anlamına gelir. 
+Örneğin;
+```bash
+$ pwd
+> /user/omerayyildiz/Desktop
+$ masaustuYolu=$(pwd)
+$ echo $masaustuYolu
+> /user/omerayyildiz/Desktop
+```
+
+## For-Do Kullanımı
+```bash
+#!/bin/bash
+for agac in akasya mese visne
+   do
+       echo $agac
+    done
+> akasya mese visne
+```
