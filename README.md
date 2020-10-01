@@ -49,6 +49,8 @@ Bu repo shell komutlarının türkçe açıklamalarını içerir. Ekleme için p
 
 `cat dosya_ismi`: Dosyanın içeriğini ekrana yazdırır.
 
+`tac dosya_ismi`: Dosyanın içeriğini tersten ekrana yazdırır. Satırları, sonuncu satırdan ilk satıra doğru yazdırır. `cat` komutunun tersidir.
+
 `df`: Dosya sisteminizdeki disk alanı hakkında bilgi edinmenizi sağlar.
 
 `du`: Disk kullanımını görmek ve hangi uygulamanın yada dosya alt sisteminin ne kadar yer kapladığını görmek için kullanılır.
