@@ -57,6 +57,8 @@ Bu repo shell komutlarının türkçe açıklamalarını içerir. Ekleme için p
 
 `groups`: Verilen kullanıcının gruplarını listeler. Örneğin `groups root`
 
+`curl`: URL kullanarak veri çekmeyi sağlayan gelişmiş komut.
+
 `wget`: HTTP, HTTPS veya FTP protokollerini kullanan bir adresteki dosyayı terminal üzerinden doğruca kendi makinemize indirmek için kullanılan komut.
 
 `grep`: Dosyaların içinde düzenli ifadelerle (RegEx) arama yapmanızı sağlayan komut. Log incelerken vazgeçilmezimiz.
@@ -107,6 +109,7 @@ grep’in flag’leri:
 -   `-l`: eşleşme bulunan dosya isimlerini getirir, eşleşmeleri getirmez
 -   `-n`: eşleşen satırların satır sıralarını döndürür
 -   `-v`: eşleşme bulunmayan satırları döndürür
+-   `-r`: özyinelemeli olarak tarar (recursive) 
 
 `paste`: iki tabloyu tek tablo yapar
 
@@ -188,11 +191,13 @@ bir sistemde ise temel olarak 3 kullanıcı vardır, bunlar sırasıyla
 
 buradaki 6 sayısı dosya sahibinin iznini, 4 sayısı bilgisayar üzerinde kayıtlı olan kullanıcıların iznini ve diğer 4 sayısı ise geri kalan herkesin iznini temsil eder.
 
-izinleri hesaplamak basittir. mesela dosya sahibine okuma ve yazma izni vermek için 4+2=6, okuma ve çalıştırma izni vermek için ise 4+1, yani 5 yazabiliriz. hiçbir izin vermek istemiyorsak 0 yazabiliriz. sıralama ise daima owner-group-other şeklindedir.
+izinleri hesaplamak basittir. mesela dosya sahibine okuma ve yazma izni vermek için 4+2=6, okuma ve çalıştırma izni vermek için ise 4+1, yani 5 yazabiliriz. hiçbir izin vermek istemiyorsak 0 yazabiliriz. Eğer hem okuma hem yazma hem çalıştırma izni vermek istiyorsak 7 yazabiliriz. Sıralama ise daima owner-group-other şeklindedir.
 
 ## Sistem Bilgisi
 
 `who`: Oturum açmış kullanıcıları listeler.
+
+`lspci`: PCI aygıtları listeler. Donanımsal sorunları anlamamıza yardımcı olur.
 
 `lsusb`: USB aygıtları listeler. USB ile takılan aygıtın tanınıp tanınmadığını anlamaya yarıyor.
 
@@ -200,11 +205,11 @@ izinleri hesaplamak basittir. mesela dosya sahibine okuma ve yazma izni vermek i
 
 `lsblk`: Sistemde ki diskleri ve partitionları gösterir.
 
-`lsb_release -a`: Mevcut GNU/Linux dağıtımı hakkında bilgi verir.(Debian tabanlılarda test ettim).
+`lsb_release -a`: Mevcut GNU/Linux dağıtımı hakkında bilgi verir.(Debian tabanlılarda test ettim, Arch tabanlılarda da çalışıyor).
 
 `uname -a`: Sistem ve çekirdek hakkında bilgi verir.
 
-`free`: RAM kullanımı ve durumu ile ilgili bilgi verir.
+`free`: RAM kullanımı ve durumu ile ilgili bilgi verir. (-h parametresi (human) verilerek daha okunabilir çıktı elde edilebilir)
 
 `du ./`: Verilen dizin içinde bulunan dosyaları ve boyutlarını listeliyor.
 
@@ -220,7 +225,7 @@ izinleri hesaplamak basittir. mesela dosya sahibine okuma ve yazma izni vermek i
 
 `ip a` :  Sistemde varolan tüm interface bilgilerini numaralandırarak ekrana basar.
 
-`ifconfig`: Ağ arayüzleri hakkında bilgi verir. Sistemde ki ağ kartlarının MAC ve IP adreslerini bulmakta yardımcı oluyor.
+`ifconfig`: Ağ arayüzleri hakkında bilgi verir. Sistemde ki ağ kartlarının MAC ve IP adreslerini bulmakta yardımcı oluyor. (yeni sürümlerde varsayılan olarak bulunmayabiliyor, alternatif olarak ip a kullanılabilir)
 
 `ping`: Parametre olarak girilen adrese ICMP paketleri atar. Windows' dan farklı olarak GNU/Linux sürümünde eğer müdahale edilmez ise sonsuza kadar ping atmaya devam eder. Windows' da yanılmıyorsam 3 tane atıp kendini durduruyor.
 
